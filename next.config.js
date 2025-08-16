@@ -3,7 +3,13 @@
 const nextConfig = {
   eactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'serce-sprava-strapi.onrender.com',
+        pathname: '/uploads/**',
+      },
+    ],
   },
 };
 
