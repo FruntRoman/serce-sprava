@@ -1,1 +1,1 @@
-export const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://https://serce-sprava-strapi.onrender.com";
+export const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://serce-sprava-strapi.onrender.com";
