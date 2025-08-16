@@ -29,7 +29,7 @@ export default function TourPage() {
         {tourDates.map((show, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row justify-between items-center bg-gray-800 rounded-lg p-4 shadow-lg"
+            className="flex flex-col md:flex-row justify-between items-center bg-gray-800 text-white rounded-lg p-4 shadow-lg"
           >
             <div className="text-center md:text-left">
               <p className="text-lg font-semibold">{show.city}</p>

@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className="bg-black text-white font-sans">
-        <header className="bg-gray-900 border-b border-gray-800">
+        <header className="bg-gray-900 border-b border-gray-800 text-white">
           <nav className="container mx-auto flex justify-between items-center py-4 px-6">
             <Link href="/" className="text-2xl font-bold">
               My Band

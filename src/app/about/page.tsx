@@ -1,4 +1,5 @@
-import { getMembers } from "@/api/members";
+import { getMembers, Member } from "@/api/members";
+import Image from "next/image";
 
 export default async function AboutPage() {
   const members = await getMembers();
@@ -9,9 +10,11 @@ export default async function AboutPage() {
 
       {/* Фото / банер */}
       <div className="flex justify-center">
-        <img
+        <Image
           src="/banner.jpeg"
           alt="Банер гурту"
+          width={700}
+          height={1}
           className="rounded-lg shadow-lg max-w-4xl"
         />
       </div>
@@ -31,14 +34,16 @@ export default async function AboutPage() {
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold">Наші учасники</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {members.map((member: any) => (
+          {members.map((member: Member) => (
             <div
               key={member.id}
               className="bg-white p-4 rounded-lg shadow-lg text-center"
             >
               <div className="h-32 w-32 mx-auto mb-2">
                 {member.photo ? (
-                  <img
+                  <Image
+                    width={32}
+                    height={32}
                     src={`${member.photo}`}
                     alt={member.name}
                     className="h-full w-full object-cover rounded-full"
@@ -57,7 +62,7 @@ export default async function AboutPage() {
       {/* Цитата / слоган */}
       <div className="text-center mt-8">
         <p className="text-xl italic text-gray-700">
-          "Музика — це мова, яку розуміє кожне серце."
+          &quot;Музика — це мова, яку розуміє кожне серце.&quot;
         </p>
       </div>
     </section>

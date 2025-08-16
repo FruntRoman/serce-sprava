@@ -188,7 +188,7 @@ export default function HomePage() {
           backgroundImage: "url('/band-hero.jpg')", // ⚠️ заміни на свій постер у public/images/
         }}
       >
-        <h1 className="text-5xl md:text-7xl font-bold drop-shadow-lg">
+        <h1 className="text-5xl md:text-7xl font-bold drop-shadow-lg text-white">
           MY BAND
         </h1>
       </div>
