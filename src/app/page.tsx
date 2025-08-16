@@ -1,103 +1,221 @@
-import Image from "next/image";
+// import Image from "next/image";
 
-export default function Home() {
+// const shows = [
+//   {
+//     date: "2025-09-12",
+//     city: "Київ",
+//     venue: "Atlas",
+//     tickets: "https://tix.example/kyiv",
+//   },
+//   {
+//     date: "2025-09-20",
+//     city: "Львів",
+//     venue: "FESTrepublic",
+//     tickets: "https://tix.example/lviv",
+//   },
+//   {
+//     date: "2025-10-05",
+//     city: "Одеса",
+//     venue: "Зелений Театр",
+//     tickets: "https://tix.example/odesa",
+//   },
+// ];
+
+// export default function Home() {
+//   return (
+//     <main>
+//       {/* HERO */}
+//       <section className="relative min-h-[80vh] flex items-center justify-center">
+//         <Image
+//           src="/band-hero.jpg"
+//           alt="Band hero"
+//           fill
+//           className="object-cover -z-10"
+//           priority
+//         />
+//         <div className="text-center px-4">
+//           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+//             Назва Гурту
+//           </h1>
+//           <p className="mt-4 text-lg md:text-2xl text-white/80">
+//             Музика, що змінює настрій
+//           </p>
+//           <a
+//             href="#music"
+//             className="mt-8 inline-block rounded-full bg-red-600 px-6 py-3 font-semibold hover:bg-red-700 transition"
+//           >
+//             🎵 Слухати зараз
+//           </a>
+//         </div>
+//       </section>
+
+//       {/* ABOUT */}
+//       <section id="about" className="mx-auto max-w-6xl px-4 py-20">
+//         <h2 className="text-3xl font-bold mb-6">Про нас</h2>
+//         <p className="text-white/80 leading-relaxed">
+//           Тут коротка історія гурту: стиль, впливи, досягнення. Додай фото
+//           учасників, прес-реліз, посилання на статті та рецензії.
+//         </p>
+//       </section>
+
+//       {/* MUSIC */}
+//       <section id="music" className="mx-auto max-w-6xl px-4 py-20">
+//         <h2 className="text-3xl font-bold mb-6">Музика</h2>
+//         <div className="grid md:grid-cols-2 gap-8">
+//           {/* Spotify Embed */}
+//           <div className="aspect-video rounded-xl overflow-hidden">
+//             <iframe
+//               data-testid="embed-iframe"
+//               style={{ borderRadius: 12 }}
+//               src="https://open.spotify.com/embed/track/60a0Rd6pjrkxjPbaKzXjfq?utm_source=generator"
+//               width="100%"
+//               height="352"
+//               allowFullScreen
+//               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+//               loading="lazy"
+//             ></iframe>
+//           </div>
+//           {/* YouTube Embed */}
+//           <div className="aspect-video rounded-xl overflow-hidden">
+//             <iframe
+//               width="560"
+//               height="315"
+//               src="https://www.youtube.com/embed/eVTXPUF4Oz4?si=qyWV2VX-Mz4mQXba"
+//               title="YouTube video player"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+//               referrerPolicy="strict-origin-when-cross-origin"
+//               allowFullScreen
+//             ></iframe>
+//           </div>
+//         </div>
+//         <div className="mt-6 flex flex-wrap gap-3">
+//           <a
+//             href="https://open.spotify.com/artist/YOUR_ARTIST_ID"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10"
+//           >
+//             Відкрити в Spotify
+//           </a>
+//           <a
+//             href="https://music.youtube.com/channel/YOUR_CHANNEL_ID"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10"
+//           >
+//             Відкрити в YouTube Music
+//           </a>
+//         </div>
+//       </section>
+
+//       {/* SHOWS */}
+//       <section id="shows" className="mx-auto max-w-6xl px-4 py-20">
+//         <h2 className="text-3xl font-bold mb-6">Концерти</h2>
+//         <div className="grid gap-4">
+//           {shows.map((s) => (
+//             <div
+//               key={`${s.date}-${s.city}`}
+//               className="flex flex-col md:flex-row items-start md:items-center justify-between rounded-xl border border-white/10 p-4"
+//             >
+//               <div className="space-y-1">
+//                 <p className="font-semibold">
+//                   {new Date(s.date).toLocaleDateString("uk-UA")}
+//                 </p>
+//                 <p className="text-white/80">
+//                   {s.city} — {s.venue}
+//                 </p>
+//               </div>
+//               <a
+//                 href={s.tickets}
+//                 target="_blank"
+//                 rel="noreferrer"
+//                 className="mt-3 md:mt-0 inline-block rounded-full bg-white text-black px-4 py-2 font-medium hover:bg-white/90"
+//               >
+//                 Квитки
+//               </a>
+//             </div>
+//           ))}
+//         </div>
+//       </section>
+
+//       {/* CONTACT */}
+//       <section id="contact" className="mx-auto max-w-6xl px-4 py-20">
+//         <h2 className="text-3xl font-bold mb-6">Контакти</h2>
+//         <p className="text-white/80">
+//           Букінг / преса:{" "}
+//           <a className="underline" href="mailto:booking@yourband.com">
+//             booking@yourband.com
+//           </a>
+//         </p>
+//         <div className="mt-4 flex gap-4 text-sm">
+//           <a
+//             href="https://instagram.com/yourband"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="hover:text-red-400"
+//           >
+//             Instagram
+//           </a>
+//           <a
+//             href="https://t.me/yourband"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="hover:text-red-400"
+//           >
+//             Telegram
+//           </a>
+//           <a
+//             href="https://youtube.com/@yourband"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="hover:text-red-400"
+//           >
+//             YouTube
+//           </a>
+//         </div>
+//       </section>
+//     </main>
+//   );
+// }
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <section className="flex flex-col items-center text-center gap-8">
+      {/* Великий постер або фон */}
+      <div
+        className="w-full h-[60vh] bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/band-hero.jpg')", // ⚠️ заміни на свій постер у public/images/
+        }}
+      >
+        <h1 className="text-5xl md:text-7xl font-bold drop-shadow-lg">
+          MY BAND
+        </h1>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      {/* Опис гурту */}
+      <p className="max-w-2xl text-lg text-gray-300">
+        Ми — гурт, який поєднує енергію живого виступу та емоції музики.
+        Приєднуйся до нас у подорожі по звуках і містах!
+      </p>
+
+      {/* Кнопки */}
+      <div className="flex gap-4">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://open.spotify.com/"
           target="_blank"
           rel="noopener noreferrer"
+          className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          🎵 Слухати на Spotify
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/tour"
+          className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          📅 Дивитися тур
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </section>
   );
 }
