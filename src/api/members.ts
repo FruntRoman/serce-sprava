@@ -9,7 +9,7 @@ export type Member = {
 };
 
 export async function getMembers(): Promise<Member[]> {
-  const res = await fetch(`${STRAPI_URL}/api/members?populate=photo`);
+  const res = await fetch(`${STRAPI_URL}/api/members?populate=photo`, {cache: 'no-store'});
   if (!res.ok) throw new Error(`Failed to fetch members: ${res.status}`);
 
   const json: {
