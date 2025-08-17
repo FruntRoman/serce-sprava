@@ -9,6 +9,10 @@ const nextConfig = {
         hostname: 'serce-sprava-strapi.onrender.com',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 };

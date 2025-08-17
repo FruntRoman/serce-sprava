@@ -1,6 +1,11 @@
 import { getMembers, Member } from "@/api/members";
 import Image from "next/image";
 
+const getImageUrl = (url: string) => {
+  if (url.startsWith("http")) return url; // Cloudinary або будь-який абсолютний лінк
+  return `https://serce-sprava-strapi.onrender.com${url}`; // тільки для відносних
+};
+
 export default async function AboutPage() {
   const members = await getMembers();
   console.log(members);
@@ -44,7 +49,7 @@ export default async function AboutPage() {
                   <Image
                     width={32}
                     height={32}
-                    src={`${member.photo}`}
+                    src={getImageUrl(member.photo)}
                     alt={member.name}
                     className="h-full w-full object-cover rounded-full"
                   />

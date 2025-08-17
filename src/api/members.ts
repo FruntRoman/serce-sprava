@@ -25,6 +25,6 @@ export async function getMembers(): Promise<Member[]> {
     id: member.id,
     name: member.name,
     role: member.role,
-    photo: member.photo ? STRAPI_URL + member.photo.url : null,
+    photo: member.photo ? member.photo.url : null,
   }));
 }
