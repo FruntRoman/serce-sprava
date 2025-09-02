@@ -2,13 +2,13 @@ import { getMembers, Member } from "@/api/members";
 import Image from "next/image";
 
 const getImageUrl = (url: string) => {
-  if (url.startsWith("http")) return url; // Cloudinary або будь-який абсолютний лінк
-  return `https://serce-sprava-strapi.onrender.com${url}`; // тільки для відносних
+  if (url.startsWith("http")) return url; // Cloudinary або абсолютний
+  return `https://serce-sprava-strapi.onrender.com${url}`; // для відносних
 };
 
 export default async function AboutPage() {
   const members = await getMembers();
-  console.log(members);
+
   return (
     <section className="p-6 max-w-6xl mx-auto space-y-12">
       <h1 className="text-4xl font-bold text-center mb-6">🎸 Про нас</h1>
@@ -19,8 +19,8 @@ export default async function AboutPage() {
           src="/banner.jpeg"
           alt="Банер гурту"
           width={700}
-          height={1}
-          className="rounded-lg shadow-lg max-w-4xl"
+          height={400}
+          className="rounded-lg shadow-lg max-w-4xl object-cover"
         />
       </div>
 
@@ -47,14 +47,15 @@ export default async function AboutPage() {
               <div className="h-32 w-32 mx-auto mb-2">
                 {member.photo ? (
                   <Image
-                    width={32}
-                    height={32}
                     src={getImageUrl(member.photo)}
                     alt={member.name}
-                    className="h-full w-full object-cover rounded-full"
+                    width={128}
+                    height={128}
+                    unoptimized // 🔑 вимкнули оптимізацію для перевірки кешу
+                    className="h-32 w-32 object-cover rounded-full"
                   />
                 ) : (
-                  <div className="h-full w-full bg-gray-200 rounded-full" />
+                  <div className="h-32 w-32 bg-gray-200 rounded-full" />
                 )}
               </div>
               <h3 className="font-semibold">{member.name}</h3>
