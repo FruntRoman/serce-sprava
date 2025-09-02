@@ -1,9 +1,11 @@
 import { getMembers, Member } from "@/api/members";
 import Image from "next/image";
 
+import { STRAPI_URL } from "@/lib/constants";
+
 const getImageUrl = (url: string) => {
-  if (url.startsWith("http")) return url; // Cloudinary або абсолютний
-  return `https://serce-sprava-strapi.onrender.com${url}`; // для відносних
+  if (url.startsWith("http")) return url;
+  return `${STRAPI_URL}${url}`;
 };
 
 export default async function AboutPage() {

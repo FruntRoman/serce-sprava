@@ -1,0 +1,1 @@
+export const STRAPI_URL = 'https://serce-sprava-strapi.onrender.com'
